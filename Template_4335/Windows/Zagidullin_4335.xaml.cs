@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Template_4335.Windows;
 
-namespace Template_4335
+namespace Template_4335.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Zagidullin_4335.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Zagidullin_4335 : Window
     {
-        public MainWindow()
+        public Zagidullin_4335()
         {
             InitializeComponent();
-        }
-
-        private void Zagidullin_4335_Click(object sender, RoutedEventArgs e)
-        {
-            Zagidullin_4335 zg = new Zagidullin_4335();
-            zg.Show();
         }
     }
 }
