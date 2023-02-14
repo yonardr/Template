@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Template_4333
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для _4333_Gibadulllina.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class _4333_Gibadulllina : Window
     {
-        public MainWindow()
+        public _4333_Gibadulllina()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var form = new _4333_Gibadulllina();
-            form.Show();
-            this.Hide();
         }
     }
 }
