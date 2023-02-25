@@ -37,7 +37,7 @@ namespace Template_4333
         {
             _4333_Sagitova sag = new _4333_Sagitova();
             sag.Show();
-
+        }
         private void _4333_Davliev(object sender, RoutedEventArgs e)
         {
             _4333_Davliev davliev = new _4333_Davliev();

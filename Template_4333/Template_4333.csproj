@@ -64,11 +64,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    
-    <Page Include="4333_Sagitova.xaml">
     <Page Include="4333_Valiakhmetov.xaml">
-
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="4333_Sagitova.xaml">
+    <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
@@ -81,10 +82,9 @@
     <Compile Include="4333_Gibadulllina.xaml.cs">
       <DependentUpon>4333_Gibadulllina.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="4333_Sagitova.xaml.cs">
       <DependentUpon>4333_Sagitova.xaml</DependentUpon>
-
+    </Compile>
     <Compile Include="4333_Valiakhmetov.xaml.cs">
       <DependentUpon>4333_Valiakhmetov.xaml</DependentUpon>
     </Compile>
