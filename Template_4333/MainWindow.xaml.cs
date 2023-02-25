@@ -50,5 +50,12 @@ namespace Template_4333
             dinar.Show();
             this.Hide();
         }
+
+        private void _4333_Ibragimov(object sender, RoutedEventArgs e)
+        {
+            _4333_Ibragimov ibragimov = new _4333_Ibragimov();
+            ibragimov.Show();
+            this.Hide();
+        }
     }
 }
