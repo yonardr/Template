@@ -35,5 +35,6 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <Button Grid.Row="17" Content="Автор изменений: Хамитова Э.А." Click="Khamitova_4332_Click" Background="#FFB4C9FF" Width="200" />
     </Grid>
 </Window>
