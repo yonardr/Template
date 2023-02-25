@@ -31,5 +31,11 @@ namespace Template_4333
             form.Show();
             this.Hide();
         }
+
+        private void _4333_Davliev(object sender, RoutedEventArgs e)
+        {
+            _4333_Davliev davliev = new _4333_Davliev();
+            davliev.Show();
+        }
     }
 }
