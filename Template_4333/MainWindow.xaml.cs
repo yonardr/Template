@@ -37,5 +37,12 @@ namespace Template_4333
             _4333_Davliev davliev = new _4333_Davliev();
             davliev.Show();
         }
+
+        private void dinarClick(object sender, RoutedEventArgs e)
+        {
+            var dinar = new _4333_Valiakhmetov();
+            dinar.Show();
+            this.Hide();
+        }
     }
 }
