@@ -31,5 +31,12 @@ namespace Template_4333
             form.Show();
             this.Hide();
         }
+
+        private void Dina_Click(object sender, RoutedEventArgs e)
+        {
+            _4333_Sagitova sag = new _4333_Sagitova();
+            sag.Show();
+            this.Hide();
+        }
     }
 }
