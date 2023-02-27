@@ -24,5 +24,11 @@ namespace Template_4337
         {
             InitializeComponent();
         }
+        
+        private void Khuzyakaev_4337_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new Khuzyakaev_4337();
+            window.Show();
+        }
     }
 }
