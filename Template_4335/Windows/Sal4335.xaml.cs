@@ -17,9 +17,9 @@ namespace Template_4335.Windows
     /// <summary>
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Sal4335 : Window
     {
-        public Window1()
+        public Sal4335()
         {
             InitializeComponent();
         }

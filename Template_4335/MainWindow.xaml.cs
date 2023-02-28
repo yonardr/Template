@@ -40,7 +40,8 @@ namespace Template_4335
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-         
+            Sal4335 gz = new Sal4335();
+            gz.Show();
         }
     }
 }
