@@ -38,6 +38,11 @@ namespace Template_4335
             gz.Show();
         }
 
+        private void Khusnutdinova_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Khusnutdinova_4335 kh = new Khusnutdinova_4335();
+            kh.Show();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Sal4335 gz = new Sal4335();
@@ -47,7 +52,6 @@ namespace Template_4335
         {
             Muhametzanova_4335 ma = new Muhametzanova_4335();
             ma.Show();
-
         }
     }
 }

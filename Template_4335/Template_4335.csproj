@@ -59,6 +59,9 @@
     <Compile Include="Windows\Gazizullin_4335.xaml.cs">
       <DependentUpon>Gazizullin_4335.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Khusnutdinova_4335.xaml.cs">
+      <DependentUpon>Khusnutdinova_4335.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Sal4335.xaml.cs">
       <DependentUpon>Sal4335.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\Khusnutdinova_4335.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      </Page>
     <Page Include="Windows\Sal4335.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
