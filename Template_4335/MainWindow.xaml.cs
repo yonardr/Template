@@ -66,5 +66,12 @@ namespace Template_4335
             Muhametzanova_4335 ma = new Muhametzanova_4335();
             ma.Show();
         }
+
+        private void Klevtsov_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Klevtsov_4335 k = new Klevtsov_4335();
+            k.Show();
+
+        }
     }
 }
