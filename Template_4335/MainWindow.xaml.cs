@@ -38,6 +38,19 @@ namespace Template_4335
             gz.Show();
         }
 
+
+        private void Klopov_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Klopov_4335 kl = new Klopov_4335();
+            kl.Show();
+            
+        }
+
+        private void Khantimirov_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Khantimirov_4335 k = new Khantimirov_4335();
+            k.Show();
+    }
         private void Khusnutdinova_4335_Click(object sender, RoutedEventArgs e)
         {
             Khusnutdinova_4335 kh = new Khusnutdinova_4335();
