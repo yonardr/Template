@@ -65,6 +65,15 @@
     <Compile Include="Windows\Klopov_4335.xaml.cs">
       <DependentUpon>Klopov_4335.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Khusnutdinova_4335.xaml.cs">
+      <DependentUpon>Khusnutdinova_4335.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Sal4335.xaml.cs">
+      <DependentUpon>Sal4335.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Muhametzanova_4335.xaml.cs">
+      <DependentUpon>Muhametzanova_4335.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Zagidullin_4335.xaml.cs">
       <DependentUpon>Zagidullin_4335.xaml</DependentUpon>
     </Compile>
@@ -89,6 +98,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Klopov_4335.xaml">
+<SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Khusnutdinova_4335.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      </Page>
+    <Page Include="Windows\Sal4335.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Muhametzanova_4335.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
