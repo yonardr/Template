@@ -40,7 +40,8 @@ namespace Template_4335
 
         private void Khusnutdinova_4335_Click(object sender, RoutedEventArgs e)
         {
-
+            Khusnutdinova_4335 kh = new Khusnutdinova_4335();
+            kh.Show();
         }
     }
 }
