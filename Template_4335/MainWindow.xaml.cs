@@ -31,5 +31,11 @@ namespace Template_4335
             Zagidullin_4335 zg = new Zagidullin_4335();
             zg.Show();
         }
+
+        private void Gazizullin_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Gazizullin_4335 gz = new Gazizullin_4335();
+            gz.Show();
+        }
     }
 }
