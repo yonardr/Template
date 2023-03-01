@@ -73,5 +73,10 @@ namespace Template_4335
             k.Show();
 
         }
+
+        private void Maksimov_4335_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
