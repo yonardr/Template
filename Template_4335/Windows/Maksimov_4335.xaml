@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Maksimov_4335" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock Text="Изменения выполнил студент группы 4335
+                   Максимов Михаил"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="35" TextWrapping="Wrap" FontStyle="Oblique"/>
     </Grid>
 </Window>

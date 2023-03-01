@@ -82,7 +82,7 @@ namespace Template_4335
 
         private void Akhmetova_4335_Click(object sender, RoutedEventArgs e)
         {
-            Akhmetova_4335 ak = new Akhmetova_4335();   
+            Akhmetova_4335 ak = new Akhmetova_4335();
             ak.Show();
         }
     }
