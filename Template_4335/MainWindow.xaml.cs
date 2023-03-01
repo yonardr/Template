@@ -73,5 +73,17 @@ namespace Template_4335
             k.Show();
 
         }
+
+        private void Maksimov_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Maksimov_4335 mak = new Maksimov_4335();
+            mak.Show();
+        }
+
+        private void Akhmetova_4335_Click(object sender, RoutedEventArgs e)
+        {
+            Akhmetova_4335 ak = new Akhmetova_4335();
+            ak.Show();
+        }
     }
 }
