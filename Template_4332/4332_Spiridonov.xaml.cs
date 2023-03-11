@@ -10,29 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Template_4332
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для _4332_Spiridonov.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class _4332_Spiridonov : Window
     {
-        public MainWindow()
+        public _4332_Spiridonov()
         {
             InitializeComponent();
-        }
-        private void Khamitova_4332_Click(object sender, RoutedEventArgs e)
-        {
-            _4332_Khamitova elina= new _4332_Khamitova();
-            elina.Show();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
