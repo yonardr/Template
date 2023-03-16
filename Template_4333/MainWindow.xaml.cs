@@ -32,6 +32,12 @@ namespace Template_4333
             this.Hide();
         }
 
+        private void Amir_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new _4333_Gallyamov();
+            form.Show();
+            this.Hide();
+        }
 
         private void Dina_Click(object sender, RoutedEventArgs e)
         {
