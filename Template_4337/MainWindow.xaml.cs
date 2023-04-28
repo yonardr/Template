@@ -30,5 +30,11 @@ namespace Template_4337
             var window = new Khuzyakaev_4337();
             window.Show();
         }
+
+        private void Tukhbiev_4337_OnClick(object sender, RoutedEventArgs e)
+        {
+            Tukhbiev_4337 w = new Tukhbiev_4337();
+            w.Show();
+        }
     }
 }
