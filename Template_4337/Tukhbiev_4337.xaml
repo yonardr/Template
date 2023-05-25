@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="Tukhbiev_4337" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <UniformGrid Grid.Row="0" Columns="2">
+                <Button x:Name="BnExport"
+Click="BnExport_Click">Экспорт в Excel</Button>
+                <Button x:Name="BnImport"
+Click="BnImport_Click">Импорт данных</Button>
+            </UniformGrid>
+
+        </Grid>
     </Grid>
 </Window>
