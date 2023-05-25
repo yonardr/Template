@@ -21,16 +21,7 @@ namespace Template_4337
 {
     public partial class Tukhbiev_4337 : Window
     {
-        string connectionString = "Server=ONE;Database=isrpo_2;Trusted_Connection=True;";
-        public class Fourth
-        {
-            public int Id { get; set; }
-            public string CodeOrder { get; set; }
-            public DateTime CreateDate { get; set; }
-            public int CodeClient { get; set; }
-            public string Services { get; set; }
-            public string Status { get; set; }
-        }
+        string connectionString = "Server=localhost;Database=isrpo_2;Trusted_Connection=True;";
 
         public Tukhbiev_4337()
         {
@@ -40,7 +31,7 @@ namespace Template_4337
         private void BnImport_Click(object sender, RoutedEventArgs e)
         {
             
-            string path1 = "C:\\Users\\ruste\\Documents\\1.xlsx";
+            string path1 = "C:\\Users\\Admin\\Documents\\1.xlsx";
             var excelFile = new FileInfo(path1);
             var excelTuples = new List<(int id, string orderId, string date, int clientId, string services, string status)>();
 
@@ -87,7 +78,7 @@ namespace Template_4337
 
         private void BnExport_Click(object sender, RoutedEventArgs e)
         {
-            string path2 = "C:\\Users\\ruste\\Documents\\2.xlsx";
+            string path2 = "C:\\Users\\Admin\\Documents\\2.xlsx";
             var excelFile = new FileInfo(path2);
 
             var excelSheets = new List<List<(int id, string orderId, string date, int clientId, string services, string status)>>();
