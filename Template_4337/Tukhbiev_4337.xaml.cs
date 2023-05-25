@@ -164,6 +164,161 @@ namespace Template_4337
 
         }
 
+        private void ImportJson_OnClick(object sender, RoutedEventArgs e)
+        {
+            List<Fourth> fourthList;
+            using (var fs = new FileStream("C:\\Users\\Admin\\Documents\\2.json", FileMode.OpenOrCreate))
+            {
+                using (var reader = new StreamReader(fs))
+                {
+                    fourthList = JsonConvert.DeserializeObject<List<Fourth>>(reader.ReadToEnd(), new IsoDateTimeConverter ()
+                    {
+                        DateTimeFormat = "dd.MM.yyyy"
+                    });
+                }
+            }
+
+            using (var conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                if (fourthList is null) return;
+                foreach (var command in fourthList.Select(fourth => new SqlCommand(
+                             $"INSERT INTO main (m_or_id, m_date, m_cl_id, m_services, m_status) VALUES ({fourth.CodeOrder.Split('/').First()}, '{fourth.CreateDate}', {fourth.CodeClient}, '{fourth.Services}', '{fourth.Status}')",
+                             conn)))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+
+        }
+
+        private void Exword_OnClick(object sender, RoutedEventArgs e)
+        {
+            var fourthList = new List<List<Fourth>>();
+
+            using (var conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand command =
+                    new SqlCommand(
+                        "SELECT m_id, m_or_id, m_date, m_cl_id, m_services, m_status FROM main GROUP BY m_id, m_or_id, m_date, m_cl_id, m_services, m_status ORDER BY m_status",
+                        conn);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    var previousStatus = "В прокате";
+                    if (reader.HasRows) // если есть данные
+                    {
+                        var fourthTuples =
+                            new List<Fourth>();
+
+                        while (reader.Read()) // построчно считываем данные
+                        {
+                            var fourth = new Fourth();
+                            fourth.Id = (int) reader.GetValue(0);
+                            fourth.CodeOrder = (string) reader.GetValue(1);
+                            fourth.CreateDate = (string) reader.GetValue(2);
+                            fourth.CodeClient = (int) reader.GetValue(3);
+                            fourth.Services = (string) reader.GetValue(4);
+                            fourth.Status = (string) reader.GetValue(5);
+                            if (previousStatus != fourth.Status)
+                            {
+                                previousStatus = fourth.Status;
+                                fourthList.Add(fourthTuples.ToArray().ToList());
+                                fourthTuples.Clear();
+                            }
+
+                            fourthTuples.Add(fourth);
+                        }
+                        fourthList.Add(fourthTuples.ToArray().ToList());
+                    }
+                }
+            }
+
+            try
+            {
+                var winword = new Microsoft.Office.Interop.Word.Application();
+
+                winword.ShowAnimation = false;
+
+                winword.Visible = false;
+
+                object missing = System.Reflection.Missing.Value;
+                
+                var document =
+                    winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+
+                document.Content.SetRange(0, 0);
+
+                var para1 = document.Content.Paragraphs.Add(ref missing);
+
+                foreach (var fourthsTable in fourthList)
+                {
+                    var firstTable = document.Tables.Add(para1.Range, fourthsTable.Count + 1, 6, ref missing, ref missing);
+
+                    firstTable.Borders.Enable = 1;
+                    
+                    var firstRow = firstTable.Rows[1];
+                    firstRow.Cells[1].Range.Text = "Id";
+                    firstRow.Cells[2].Range.Text = "Код заказа";
+                    firstRow.Cells[3].Range.Text = "Дата";
+                    firstRow.Cells[4].Range.Text = "Код клиента";
+                    firstRow.Cells[5].Range.Text = "Услуги";
+                    firstRow.Cells[6].Range.Text = "Статус";
+
+                    for (var i = 0; i < fourthsTable.Count; i++)
+                    {
+                        var row = firstTable.Rows[i + 2];
+                        row.Cells[1].Range.Text = $"{fourthsTable[i].Id}";
+                        row.Cells[2].Range.Text = $"{fourthsTable[i].CodeOrder}";
+                        row.Cells[3].Range.Text = $"{fourthsTable[i].CreateDate}";
+                        row.Cells[4].Range.Text = $"{fourthsTable[i].CodeClient}";
+                        row.Cells[5].Range.Text = $"{fourthsTable[i].Services}";
+                        row.Cells[6].Range.Text = $"{fourthsTable[i].Status}";
+                    }
+                    foreach (Row row in firstTable.Rows)
+                    {
+                        foreach (Cell cell in row.Cells)
+                        {
+                            if (cell.RowIndex == 1)
+                            {
+                                cell.Range.Font.Bold = 1;
+                                cell.Range.Font.Name = "verdana";
+                                cell.Range.Font.Size = 10;                            
+                                cell.Shading.BackgroundPatternColor = WdColor.wdColorGray25;
+                                cell.VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
+                                cell.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                            }
+                        }
+                    }
+                    para1.Range.InsertBreak();
+                }
+
+                //Save the document  
+                object filename = Path.Combine("C:\\Users\\Admin\\Documents\\", "2.docx");
+                document.SaveAs2(ref filename);
+                document.Close(ref missing, ref missing, ref missing);
+                document = null;
+                winword.Quit(ref missing, ref missing, ref missing);
+                winword = null;
+                MessageBox.Show("Document created successfully !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        public class Fourth
+        {
+            public int Id { get; set; }
+            public string CodeOrder { get; set; }
+            public string CreateDate { get; set; }
+            public int CodeClient { get; set; }
+            public string Services { get; set; }
+            public string Status { get; set; }
+        }
+
     }
 
 }
